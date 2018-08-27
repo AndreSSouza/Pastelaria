@@ -36,7 +36,24 @@ namespace Pastelaria.DAL
             con.Desconectar();//Fechando Conexao
         }
 
+        public DataTable ConsultarTodos()
+        {
+            SqlDataAdapter da = new SqlDataAdapter(@"SELECT CODCLIENTE [Código], NOME Nome, TELEFONE Telefone, CELULAR Celular, EMAIL [E-mail], ENDERECO [Endereço], CIDADE Cidade, NUMERO [Número], CEP, REFERENCIA [Referência], CPF FROM CLIENTE ORDER BY Nome", con.Conectar());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Desconectar();
+            return dt;
+        }
 
+        public DataTable ConsultarPorNome(BLL.Cliente cli)
+        {
+            SqlDataAdapter da = new SqlDataAdapter(@"SELECT CODCLIENTE [Código], NOME Nome, TELEFONE Telefone, CELULAR Celular, EMAIL [E-mail], ENDERECO [Endereço], CIDADE Cidade, NUMERO [Número], CEP, REFERENCIA [Referência], CPF FROM CLIENTE WHERE Nome LIKE @NOME ORDER BY Nome", con.Conectar());
+            da.SelectCommand.Parameters.AddWithValue("Nome", cli.Nome + "%");
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Desconectar();
+            return dt;
+        }
 
     }
 }

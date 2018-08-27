@@ -45,7 +45,18 @@ namespace Pastelaria.UI
 
         private void frmFuncionarios_Load(object sender, EventArgs e)
         {
+            dgvConsultaFunc.DataSource = func.ConsultarTodos();
+        }
 
+        private void dgvConsultaProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtFiltrar_TextChanged(object sender, EventArgs e)
+        {
+            func.Nome = txtFiltrar.Text;
+            dgvConsultaFunc.DataSource = func.ConsultarPorNome(func);
         }
     }
 }

@@ -41,7 +41,7 @@ namespace Pastelaria.UI
 
         private void frmProdutos_Load(object sender, EventArgs e)
         {
-            //Para chegar aqui cliquei duas vezes no fomulario
+            //Para chegar aqui cliquei duas vezes no formulario
             //Será executado ao abrir o formulario
             dgvConsultaProd.DataSource = prodDAL.ConsultarTodos();  
         }
@@ -50,6 +50,28 @@ namespace Pastelaria.UI
         {
             prod.Nomeproduto = txtFiltrar.Text;
             dgvConsultaProd.DataSource = prodDAL.ConsultarPorNome(prod);
+        }
+
+        private void dgvConsultaProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnLimparProd_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctl in tabPage1.Controls)
+            {
+                if (ctl is TextBox || ctl is MaskedTextBox)
+                {
+                    ctl.Text = "";
+                }
+                txtNomeProd.Focus();
+            }
+        }
+
+        private void lblFiltrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

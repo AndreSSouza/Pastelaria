@@ -73,5 +73,29 @@ namespace Pastelaria.UI
 
         }
 
+        private void frmClientes_Load(object sender, EventArgs e)
+        {
+            //Para chegar aqui cliquei duas vezes no formulario
+            //Será executado ao abrir o formulario
+            dgvConsultaCli.DataSource = cliDAL.ConsultarTodos();
+        }
+
+        private void btnLimparCli_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctl in tabPage1.Controls)
+            {
+                if (ctl is TextBox || ctl is MaskedTextBox)
+                {
+                    ctl.Text = "";
+                }
+                txtNomeCliente.Focus();
+            }
+        }
+
+        private void txtFiltrar_TextChanged(object sender, EventArgs e)
+        {
+            cli.Nome = txtFiltrar.Text;
+            dgvConsultaCli.DataSource = cliDAL.ConsultarPorNome(cli);
+        }
     }
 }

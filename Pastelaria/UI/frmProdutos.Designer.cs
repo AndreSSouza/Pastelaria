@@ -41,9 +41,9 @@
             this.txtNomeProd = new System.Windows.Forms.TextBox();
             this.txtPrecoProd = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvConsultaProd = new System.Windows.Forms.DataGridView();
-            this.lblFiltrar = new System.Windows.Forms.Label();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
+            this.lblFiltrar = new System.Windows.Forms.Label();
+            this.dgvConsultaProd = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -91,6 +91,7 @@
             this.btnLimparProd.TabIndex = 33;
             this.btnLimparProd.Text = "Limpar";
             this.btnLimparProd.UseVisualStyleBackColor = true;
+            this.btnLimparProd.Click += new System.EventHandler(this.btnLimparProd_Click);
             // 
             // btnCadastrarProd
             // 
@@ -184,6 +185,24 @@
             this.tabPage2.Text = "CONSULTA";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtFiltrar
+            // 
+            this.txtFiltrar.Location = new System.Drawing.Point(146, 7);
+            this.txtFiltrar.Name = "txtFiltrar";
+            this.txtFiltrar.Size = new System.Drawing.Size(295, 28);
+            this.txtFiltrar.TabIndex = 2;
+            this.txtFiltrar.TextChanged += new System.EventHandler(this.txtFiltrar_TextChanged);
+            // 
+            // lblFiltrar
+            // 
+            this.lblFiltrar.AutoSize = true;
+            this.lblFiltrar.Location = new System.Drawing.Point(76, 10);
+            this.lblFiltrar.Name = "lblFiltrar";
+            this.lblFiltrar.Size = new System.Drawing.Size(63, 22);
+            this.lblFiltrar.TabIndex = 1;
+            this.lblFiltrar.Text = "Filtrar:";
+            this.lblFiltrar.Click += new System.EventHandler(this.lblFiltrar_Click);
+            // 
             // dgvConsultaProd
             // 
             this.dgvConsultaProd.AllowUserToAddRows = false;
@@ -197,23 +216,7 @@
             this.dgvConsultaProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultaProd.Size = new System.Drawing.Size(616, 276);
             this.dgvConsultaProd.TabIndex = 0;
-            // 
-            // lblFiltrar
-            // 
-            this.lblFiltrar.AutoSize = true;
-            this.lblFiltrar.Location = new System.Drawing.Point(76, 10);
-            this.lblFiltrar.Name = "lblFiltrar";
-            this.lblFiltrar.Size = new System.Drawing.Size(63, 22);
-            this.lblFiltrar.TabIndex = 1;
-            this.lblFiltrar.Text = "Filtrar:";
-            // 
-            // txtFiltrar
-            // 
-            this.txtFiltrar.Location = new System.Drawing.Point(146, 7);
-            this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(295, 28);
-            this.txtFiltrar.TabIndex = 2;
-            this.txtFiltrar.TextChanged += new System.EventHandler(this.txtFiltrar_TextChanged);
+            this.dgvConsultaProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaProd_CellContentClick);
             // 
             // frmProdutos
             // 

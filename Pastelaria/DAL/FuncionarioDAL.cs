@@ -26,5 +26,23 @@ namespace Pastelaria.DAL
             con.Desconectar();
         }
 
+        public DataTable ConsultarTodos()
+        {
+            SqlDataAdapter da = new SqlDataAdapter(@"SELECT CODFUNCIONARIO [Código], NOME Nome, FUNCAO [Função], SALARIO [Salário], CELULAR Celular FROM FUNCIONARIO ORDER BY Nome", con.Conectar());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Desconectar();
+            return dt;
+        }
+
+        public DataTable ConsultatPorNome(BLL.Funcionario func)
+        {
+            SqlDataAdapter da = new SqlDataAdapter(@"SELECT CODFUNCIONARIO [Código], NOME Nome, FUNCAO [Função], SALARIO [Salário], CELULAR Celular FROM FUNCIONARIO WHERE Nome LIKE @Nome ORDER BY Nome", con.Conectar());
+            da.SelectCommand.Parameters.AddWithValue("@Nome", func.Nome + "%");
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Desconectar();
+            return dt;
+        }
     }
 }

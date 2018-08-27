@@ -55,8 +55,13 @@
             this.txtEmailCliente = new System.Windows.Forms.TextBox();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtFiltrar = new System.Windows.Forms.TextBox();
+            this.lblFiltrar = new System.Windows.Forms.Label();
+            this.dgvConsultaCli = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaCli)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -68,7 +73,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(821, 570);
+            this.tabControl1.Size = new System.Drawing.Size(684, 570);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -102,7 +107,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(813, 535);
+            this.tabPage1.Size = new System.Drawing.Size(676, 535);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CADASTRO";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -111,7 +116,7 @@
             // mtxtCpfCliente
             // 
             this.mtxtCpfCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtxtCpfCliente.Location = new System.Drawing.Point(267, 341);
+            this.mtxtCpfCliente.Location = new System.Drawing.Point(151, 335);
             this.mtxtCpfCliente.Mask = "000,000,000-00";
             this.mtxtCpfCliente.Name = "mtxtCpfCliente";
             this.mtxtCpfCliente.Size = new System.Drawing.Size(130, 28);
@@ -120,7 +125,7 @@
             // lblCpfCliente
             // 
             this.lblCpfCliente.AutoSize = true;
-            this.lblCpfCliente.Location = new System.Drawing.Point(205, 343);
+            this.lblCpfCliente.Location = new System.Drawing.Point(89, 337);
             this.lblCpfCliente.Name = "lblCpfCliente";
             this.lblCpfCliente.Size = new System.Drawing.Size(43, 22);
             this.lblCpfCliente.TabIndex = 22;
@@ -129,7 +134,7 @@
             // lblReferenciaCliente
             // 
             this.lblReferenciaCliente.AutoSize = true;
-            this.lblReferenciaCliente.Location = new System.Drawing.Point(153, 309);
+            this.lblReferenciaCliente.Location = new System.Drawing.Point(37, 303);
             this.lblReferenciaCliente.Name = "lblReferenciaCliente";
             this.lblReferenciaCliente.Size = new System.Drawing.Size(94, 22);
             this.lblReferenciaCliente.TabIndex = 21;
@@ -138,7 +143,7 @@
             // txtReferenciaCliente
             // 
             this.txtReferenciaCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtReferenciaCliente.Location = new System.Drawing.Point(267, 303);
+            this.txtReferenciaCliente.Location = new System.Drawing.Point(151, 297);
             this.txtReferenciaCliente.Name = "txtReferenciaCliente";
             this.txtReferenciaCliente.Size = new System.Drawing.Size(241, 28);
             this.txtReferenciaCliente.TabIndex = 20;
@@ -146,7 +151,7 @@
             // mtxtCep
             // 
             this.mtxtCep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtxtCep.Location = new System.Drawing.Point(533, 261);
+            this.mtxtCep.Location = new System.Drawing.Point(417, 255);
             this.mtxtCep.Mask = "00000-000";
             this.mtxtCep.Name = "mtxtCep";
             this.mtxtCep.Size = new System.Drawing.Size(90, 28);
@@ -156,7 +161,7 @@
             // lblCepCliente
             // 
             this.lblCepCliente.AutoSize = true;
-            this.lblCepCliente.Location = new System.Drawing.Point(493, 264);
+            this.lblCepCliente.Location = new System.Drawing.Point(377, 258);
             this.lblCepCliente.Name = "lblCepCliente";
             this.lblCepCliente.Size = new System.Drawing.Size(43, 22);
             this.lblCepCliente.TabIndex = 18;
@@ -165,16 +170,17 @@
             // btnLimparCli
             // 
             this.btnLimparCli.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLimparCli.Location = new System.Drawing.Point(492, 426);
+            this.btnLimparCli.Location = new System.Drawing.Point(376, 420);
             this.btnLimparCli.Name = "btnLimparCli";
             this.btnLimparCli.Size = new System.Drawing.Size(128, 34);
             this.btnLimparCli.TabIndex = 17;
             this.btnLimparCli.Text = "Limpar";
             this.btnLimparCli.UseVisualStyleBackColor = true;
+            this.btnLimparCli.Click += new System.EventHandler(this.btnLimparCli_Click);
             // 
             // btnCadastrarCli
             // 
-            this.btnCadastrarCli.Location = new System.Drawing.Point(270, 426);
+            this.btnCadastrarCli.Location = new System.Drawing.Point(154, 420);
             this.btnCadastrarCli.Name = "btnCadastrarCli";
             this.btnCadastrarCli.Size = new System.Drawing.Size(151, 34);
             this.btnCadastrarCli.TabIndex = 16;
@@ -185,7 +191,7 @@
             // lblCidadeCliente
             // 
             this.lblCidadeCliente.AutoSize = true;
-            this.lblCidadeCliente.Location = new System.Drawing.Point(184, 264);
+            this.lblCidadeCliente.Location = new System.Drawing.Point(68, 258);
             this.lblCidadeCliente.Name = "lblCidadeCliente";
             this.lblCidadeCliente.Size = new System.Drawing.Size(64, 22);
             this.lblCidadeCliente.TabIndex = 15;
@@ -194,7 +200,7 @@
             // txtCidadeCliente
             // 
             this.txtCidadeCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCidadeCliente.Location = new System.Drawing.Point(267, 261);
+            this.txtCidadeCliente.Location = new System.Drawing.Point(151, 255);
             this.txtCidadeCliente.Name = "txtCidadeCliente";
             this.txtCidadeCliente.Size = new System.Drawing.Size(210, 28);
             this.txtCidadeCliente.TabIndex = 14;
@@ -202,7 +208,7 @@
             // lblBairroCliente
             // 
             this.lblBairroCliente.AutoSize = true;
-            this.lblBairroCliente.Location = new System.Drawing.Point(184, 223);
+            this.lblBairroCliente.Location = new System.Drawing.Point(68, 217);
             this.lblBairroCliente.Name = "lblBairroCliente";
             this.lblBairroCliente.Size = new System.Drawing.Size(60, 22);
             this.lblBairroCliente.TabIndex = 13;
@@ -212,7 +218,7 @@
             // txtBairroCliente
             // 
             this.txtBairroCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBairroCliente.Location = new System.Drawing.Point(267, 220);
+            this.txtBairroCliente.Location = new System.Drawing.Point(151, 214);
             this.txtBairroCliente.Name = "txtBairroCliente";
             this.txtBairroCliente.Size = new System.Drawing.Size(210, 28);
             this.txtBairroCliente.TabIndex = 12;
@@ -220,7 +226,7 @@
             // lblNumeroCliente
             // 
             this.lblNumeroCliente.AutoSize = true;
-            this.lblNumeroCliente.Location = new System.Drawing.Point(529, 177);
+            this.lblNumeroCliente.Location = new System.Drawing.Point(413, 171);
             this.lblNumeroCliente.Name = "lblNumeroCliente";
             this.lblNumeroCliente.Size = new System.Drawing.Size(38, 22);
             this.lblNumeroCliente.TabIndex = 11;
@@ -229,7 +235,7 @@
             // txtNumeroCliente
             // 
             this.txtNumeroCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumeroCliente.Location = new System.Drawing.Point(576, 174);
+            this.txtNumeroCliente.Location = new System.Drawing.Point(460, 168);
             this.txtNumeroCliente.Name = "txtNumeroCliente";
             this.txtNumeroCliente.Size = new System.Drawing.Size(47, 28);
             this.txtNumeroCliente.TabIndex = 10;
@@ -237,7 +243,7 @@
             // lblEnderecoCliente
             // 
             this.lblEnderecoCliente.AutoSize = true;
-            this.lblEnderecoCliente.Location = new System.Drawing.Point(170, 177);
+            this.lblEnderecoCliente.Location = new System.Drawing.Point(54, 171);
             this.lblEnderecoCliente.Name = "lblEnderecoCliente";
             this.lblEnderecoCliente.Size = new System.Drawing.Size(82, 22);
             this.lblEnderecoCliente.TabIndex = 9;
@@ -246,7 +252,7 @@
             // txtEnderecoCliente
             // 
             this.txtEnderecoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEnderecoCliente.Location = new System.Drawing.Point(267, 174);
+            this.txtEnderecoCliente.Location = new System.Drawing.Point(151, 168);
             this.txtEnderecoCliente.Name = "txtEnderecoCliente";
             this.txtEnderecoCliente.Size = new System.Drawing.Size(241, 28);
             this.txtEnderecoCliente.TabIndex = 8;
@@ -254,7 +260,7 @@
             // lblEmailCliente
             // 
             this.lblEmailCliente.AutoSize = true;
-            this.lblEmailCliente.Location = new System.Drawing.Point(184, 137);
+            this.lblEmailCliente.Location = new System.Drawing.Point(68, 131);
             this.lblEmailCliente.Name = "lblEmailCliente";
             this.lblEmailCliente.Size = new System.Drawing.Size(63, 22);
             this.lblEmailCliente.TabIndex = 7;
@@ -263,7 +269,7 @@
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
-            this.lblCelular.Location = new System.Drawing.Point(412, 103);
+            this.lblCelular.Location = new System.Drawing.Point(296, 97);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(65, 22);
             this.lblCelular.TabIndex = 6;
@@ -272,7 +278,7 @@
             // mtxtTelefoneCliente
             // 
             this.mtxtTelefoneCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtxtTelefoneCliente.Location = new System.Drawing.Point(267, 97);
+            this.mtxtTelefoneCliente.Location = new System.Drawing.Point(151, 91);
             this.mtxtTelefoneCliente.Mask = "(00)0000-0000";
             this.mtxtTelefoneCliente.Name = "mtxtTelefoneCliente";
             this.mtxtTelefoneCliente.Size = new System.Drawing.Size(118, 28);
@@ -281,7 +287,7 @@
             // mtxtCelularCliente
             // 
             this.mtxtCelularCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtxtCelularCliente.Location = new System.Drawing.Point(495, 100);
+            this.mtxtCelularCliente.Location = new System.Drawing.Point(379, 94);
             this.mtxtCelularCliente.Mask = "(00)00000-0000";
             this.mtxtCelularCliente.Name = "mtxtCelularCliente";
             this.mtxtCelularCliente.Size = new System.Drawing.Size(128, 28);
@@ -290,7 +296,7 @@
             // lblTelefoneCliente
             // 
             this.lblTelefoneCliente.AutoSize = true;
-            this.lblTelefoneCliente.Location = new System.Drawing.Point(170, 100);
+            this.lblTelefoneCliente.Location = new System.Drawing.Point(54, 94);
             this.lblTelefoneCliente.Name = "lblTelefoneCliente";
             this.lblTelefoneCliente.Size = new System.Drawing.Size(79, 22);
             this.lblTelefoneCliente.TabIndex = 3;
@@ -300,7 +306,7 @@
             // lblNomeCliente
             // 
             this.lblNomeCliente.AutoSize = true;
-            this.lblNomeCliente.Location = new System.Drawing.Point(192, 61);
+            this.lblNomeCliente.Location = new System.Drawing.Point(76, 55);
             this.lblNomeCliente.Name = "lblNomeCliente";
             this.lblNomeCliente.Size = new System.Drawing.Size(57, 22);
             this.lblNomeCliente.TabIndex = 2;
@@ -310,7 +316,7 @@
             // txtEmailCliente
             // 
             this.txtEmailCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmailCliente.Location = new System.Drawing.Point(267, 134);
+            this.txtEmailCliente.Location = new System.Drawing.Point(151, 128);
             this.txtEmailCliente.Name = "txtEmailCliente";
             this.txtEmailCliente.Size = new System.Drawing.Size(356, 28);
             this.txtEmailCliente.TabIndex = 1;
@@ -318,33 +324,71 @@
             // txtNomeCliente
             // 
             this.txtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNomeCliente.Location = new System.Drawing.Point(267, 55);
+            this.txtNomeCliente.Location = new System.Drawing.Point(151, 49);
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(356, 28);
             this.txtNomeCliente.TabIndex = 0;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txtFiltrar);
+            this.tabPage2.Controls.Add(this.lblFiltrar);
+            this.tabPage2.Controls.Add(this.dgvConsultaCli);
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(813, 535);
+            this.tabPage2.Size = new System.Drawing.Size(676, 535);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "CONSULTA";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txtFiltrar
+            // 
+            this.txtFiltrar.Location = new System.Drawing.Point(82, 6);
+            this.txtFiltrar.Name = "txtFiltrar";
+            this.txtFiltrar.Size = new System.Drawing.Size(569, 28);
+            this.txtFiltrar.TabIndex = 5;
+            this.txtFiltrar.TextChanged += new System.EventHandler(this.txtFiltrar_TextChanged);
+            // 
+            // lblFiltrar
+            // 
+            this.lblFiltrar.AutoSize = true;
+            this.lblFiltrar.Location = new System.Drawing.Point(12, 9);
+            this.lblFiltrar.Name = "lblFiltrar";
+            this.lblFiltrar.Size = new System.Drawing.Size(63, 22);
+            this.lblFiltrar.TabIndex = 4;
+            this.lblFiltrar.Text = "Filtrar:";
+            // 
+            // dgvConsultaCli
+            // 
+            this.dgvConsultaCli.AllowUserToAddRows = false;
+            this.dgvConsultaCli.AllowUserToDeleteRows = false;
+            this.dgvConsultaCli.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvConsultaCli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsultaCli.Location = new System.Drawing.Point(0, 40);
+            this.dgvConsultaCli.Name = "dgvConsultaCli";
+            this.dgvConsultaCli.ReadOnly = true;
+            this.dgvConsultaCli.RowHeadersVisible = false;
+            this.dgvConsultaCli.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvConsultaCli.Size = new System.Drawing.Size(676, 495);
+            this.dgvConsultaCli.TabIndex = 3;
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 570);
+            this.ClientSize = new System.Drawing.Size(684, 570);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.frmClientes_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaCli)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -378,5 +422,8 @@
         private System.Windows.Forms.TextBox txtReferenciaCliente;
         private System.Windows.Forms.MaskedTextBox mtxtCpfCliente;
         private System.Windows.Forms.Label lblCpfCliente;
+        private System.Windows.Forms.TextBox txtFiltrar;
+        private System.Windows.Forms.Label lblFiltrar;
+        private System.Windows.Forms.DataGridView dgvConsultaCli;
     }
 }
